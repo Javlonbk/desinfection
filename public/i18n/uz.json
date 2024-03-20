@@ -1,0 +1,63 @@
+{
+    "navbar": {
+      "appTitle": "Dizenfeksiya",
+      "home": "Asosiy",
+      "services": "Xizmatlar",
+      "aboutUs": "Biz haqimizda",
+      "faq": "Faq"
+    },
+    "about": {
+        "title": "Dizenfeksiya xizmati",
+        "description": "Biz Toshkentda 10 yildan beri professional dezinfeksiya ishlarini olib boramiz, shuning uchun birinchi marta zararkunandalardan qanday qutulishni bilamiz."
+    },
+    "advantages": {
+      "title": "Afzalliklarimiz",
+      "fastService": "Tezda xizmat ko’rsatish",
+      "fastServiceDescription": "ARIZALAR KUNIGA 24 SOAT QABUL QILINADI. AGAR MUAMMO SHOSHILINCH BO‘LSA, BIZ DARHOL KЕTISHIMIZ MUMKIN. SHU BILAN BIRGA, SIFAT MUKAMMAL BO‘LIB QOLADI.",
+      "experiencedStaff": "Yetuk mutahasislaimiz",
+      "experiencedStaffDescription": "BIZNING XODIMLARIMIZ HAMMA NARSAGA G‘AMXO‘RLIK QILADI: HISOB-KITOBLAR, XONANI TAYYORLASH, QAYTA ISHLASH, YAKUNIY TOZALASH, VЕNTILYATSIYA VA NAZORAT TЕKSHIRUVI.",
+      "convenientTiming": "Sizga maqul vaqtda",
+      "convenientTimingDescription": "SIZ O‘ZINGIZ UCHUN MAQUL VA QULAY VAQTNI TANLANG VA BIZGA MUROJAT QILING. SIZGA KAFOLATLANGAN VA SAMARALI NATIJANI OLIB BORAMIZ",
+      "featuredTitle": "Klapa va zararli hashorot endi yo’q deb hisoblang !!!",
+      "featuredDescription": "Bizning ko’p yillardan beri o’z faoliyatini olib kelayotgan kompaniyamiz Mijozlarimiz bizdan mamnun"
+    },
+    "contact": {
+      "placeholderName": "Ismingizni kiriting",
+      "placeholderPhone": "Telefon raqamingizni kiriting",
+      "submitButtonText": "Yuborish",
+      "formTitle": "Malumotingizni qoldiring"
+    },
+    "faq": {
+      "title": "FAQ",
+      "question1": "Zararkunandalarni yo'q qilish qanday amalga oshiriladi?",
+      "answer1": "Mahsus asbob-uskunalar yerdamida insectitsidlar aerosolli tumanga aylanadi va devor kogozi, energiya va takhta mahsulotlari eng kichik bushliqlarga, kuzga kurinmas xasharotlar uchun potensial 'yashirish zhoilari' ga chiqadi.",
+      "question2": "Qanday jarayonlarda xizmat ko'rsatiladi?",
+      "answer2": "Xizmat ko'rsatish jarayonlari shunday bo'ladi: yangilash, tekshirish, davolash va baholash.",
+      "question3": "Xizmatlar qancha pul to'lash uchun?",
+      "answer3": "Xizmatlar narxlariga ta'sir qiladigan ko'plab omillar mavjud, masalan, joylashgan hudud, qulaylik va xizmat ko'rsatuvchi kompaniya narxi."
+    },
+    "guarante": {
+      "text": "Rasmiy kafolat - 1 yil. Biz jismoniy va yuridik shaxslarga xizmat ko'rsatamiz. Xizmatlar litsenziyalangan!!!",
+      "buttonText": "Batafsil"
+    },
+    "services": {
+      "title": "Xizmatlar",
+      "description": "Biz sizga samarali va kafolatli xizmat taqdim etamiz."
+    },
+    "serviceItems": {
+      "decontamination": {
+        "heading": "Dezinfeksiya - zararli mikro organizmlarni yo'q qilish",
+        "title": "Har qanday dezinfektsiyaning asosiy vazifalari infektsiyalar va kasalliklarga olib kelishi mumkin bo'lgan xavfli mikroorganizmlarni yo'q qilishdir. Dezinfeksiya choralari bu yerni mogor, virus, chiriyotgan va mikroblardan tozalaydi. Agar o'zingni yo'q qilish kerak, yoki sababsiz zaiflashsangiz kerak."
+      },
+      "insectControl": {
+        "heading": "Dezinfiksiya - hashoratlarni yo'q qilish",
+        "title": "Ko'p odamlar birinchi navbatda 'dezinfestatsiya' so'zini istalmagan qo'shnilaridan - choyshablar, barchamböcekler, chumolilar va boshqa hasharotlardan xalos bo'lish du yolini qidirganda. Ularning o'zlarini yo'qimsiz va ular ham ma'lum infeksiya tashuvchilari. Dezinseksiya - bu hasharotlarni: chivinlar, chivinlar, choyshablar, tarakanlar, kuya, shomil, qobiq qo'ng'izlari, yo'g'och bitlari va boshqa sudralib yuruvchi va uchuvchi jonzotlarni yo'q qilish. ."
+      },
+      "rodentControl": {
+        "heading": "Dezinfeksiya - kemiruvchilarni yo'q qilish",
+        "title": "Toshkentda derat sifatida kamiruvchilarni yo'qotishga qaratiladigan kompleks chora-tadbirlarning butun majmuasidir. aniqki, kemiruvchilar juda qat'iy jonzotlar bo'lib, ular turli xavfli xavf-xatarlarga dosh beradilar. Shuning uchun ularni yo'q qilish uchun bir panel usullardan foydalanish kerak. Derat joyda Toshkent shaharda kemiruvchilarda paydo boʻlgan koʻp qavmli uylar, omborlar, doʻkonlar, umumiy ovkatlanish korxonalari amalga oshiriladi."
+      }
+    }
+        
+  }
+  
