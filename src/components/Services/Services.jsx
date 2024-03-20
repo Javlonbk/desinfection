@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from 'react-i18next';
 import { Container, Box } from "@mui/material";
-import { HeroText, StandarText } from "../Text/Text";
+import { HeroText, MediumText, StandarText } from "../Text/Text";
 import { Card, ServicesContainer } from "./style";
 import bacteriaImg from '../../assets/png/dizinfeksiya1.png'
 import insectImg from '../../assets/png/dizinfeksiya2.png'
@@ -29,9 +29,9 @@ const Services = () => {
   ];
 
   return (
-    <ServicesContainer>
+    <ServicesContainer id="services" style={{ overflowY: 'auto', scrollBehavior: 'smooth' }}>
       <Container>
-        <Box sx={{ width: "200px" }}>
+        <Box sx={{ width: "300px" }}>
           <HeroText>{t("services.title")}</HeroText>
           <StandarText style={{ marginTop: "20px" }}>
             {t("services.description")}
@@ -42,7 +42,7 @@ const Services = () => {
             <Card key={index}>
               <Card.Image src={item.imgSrc} />
               <div>
-                <HeroText>{item.heading}</HeroText>
+                <MediumText>{item.heading}</MediumText>
                 <StandarText style={{ marginTop: '20px' }}>
                   {item.title}
                 </StandarText>

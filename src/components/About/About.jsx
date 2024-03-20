@@ -13,12 +13,9 @@ const About = () => {
       <Container sx={{ display: "flex", justifyContent:"space-between"}}>
         <div className='about-info'>
           <h1>{t('about.title')}</h1>
-          <StandarText>{t('about.description')}</StandarText>
+          <StandarText white>{t('about.description')}</StandarText>
           <ButtonPrimary/>
         </div>
-        <ImageContainer>
-            <ImageContainer.HomePng/>
-        </ImageContainer>
       </Container>
     </AboutContainer>
   );

@@ -1,29 +1,65 @@
 import React from "react";
 import { FooterContainer } from "./style";
-import { Container, Typography } from "@mui/material";
+import { Container, Typography, Box } from "@mui/material";
+import logo from '../../assets/svg/logo.svg';
+import { useTranslation } from "react-i18next";
+import PinDropIcon from '@mui/icons-material/PinDrop';
+import LocalPhoneIcon from '@mui/icons-material/LocalPhone';
 
 const Footer = () => {
+  const { t } = useTranslation();
+
   return (
     <FooterContainer>
-      <Container>
+      <Container sx={{display:'flex'}}>
+      <Box sx={{ display: 'flex', alignItems:'center', color:'#2257bf'}}>
+            <img src={logo} style={{width:'60px', marginTop:'10px'}} alt="" />
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                ms: 2,
+                mr: 3,
+                fontFamily: "monospace",
+                fontWeight: 700,
+                letterSpacing: ".1rem",
+                color: "inherit",
+                textDecoration: "none",
+              }}
+            >
+              {t('navbar.appTitle')}
+            </Typography>
+      </Box>
+      <Box m={'30px 0px 0px 100px'}> 
+
         <Typography
-          variant="h6"
-          noWrap
-          component="a"
-          href="#app-bar-with-responsive-menu"
-          sx={{
-            mr: 2,
-            display: { xs: "none", md: "flex" },
-            fontFamily: "monospace",
-            fontWeight: 700,
-            letterSpacing: ".3rem",
-            color: "inherit",
-            textDecoration: "none",
-          }}
+        component="a"
+        nowrap
+        display={"block"}
+        sx={{
+          color:'#3C3C43',
+          fontWeight:600,
+          mb:'10px'
+        }}
+        href='/'
         >
-          Dizenfeksiya
-        </Typography>
-        
+          <PinDropIcon sx={{fontSize:'30px', mb:'-10px', mr:'10px'}} />
+          {t('footer.location')}</Typography>
+        <Typography
+        component="a"
+        nowrap
+        display={"block"}
+        sx={{
+          color:'#3C3C43',
+          fontWeight:600,
+        }}
+        href='/'
+        >
+          <LocalPhoneIcon sx={{fontSize:'30px', mb:'-10px', mr:'10px'}} />
+          {t('footer.phone')}</Typography>
+      </Box>  
       </Container>
     </FooterContainer>
   );

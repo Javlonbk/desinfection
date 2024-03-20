@@ -14,9 +14,10 @@ margin: 50px auto;
 .advantage_box_content{
 color:'#FAFAFA' !important;
  position: absolute;
- width: 35%;
+ width: 50%;
  top: 50px;
  right: 100px;
+
 }
 }
 `

@@ -3,7 +3,7 @@ import GuaranteImage from '../../assets/png/guarante.png'; // Import the PNG ima
 import GuaranteIcon from '../../assets/svg/dicons.svg'; // Import the SVG icon
 
 export const GuaranteContainer = styled.div`
-    background: radial-gradient(95.44% 490.36% at 92.87% 11.25%, #33A9FF 0%, #33FFF3 100%);
+background: radial-gradient(95.44% 490.36% at 92.87% 11.25%, #1c4c9f 0%, #33FFF3 100%);
     border-radius: 16px;
     padding: 30px;
     display: flex;

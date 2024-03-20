@@ -3,7 +3,8 @@ import styled from 'styled-components'
 
 
 export const ServicesContainer = styled.div`
-
+overflow-y: auto;
+scroll-behavior: smooth;
 `
 export const Card = styled(Paper).attrs({
     elevation: 3

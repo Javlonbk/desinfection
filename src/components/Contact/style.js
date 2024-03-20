@@ -1,10 +1,12 @@
 import styled from 'styled-components'
-import personImage from '../../assets/png/person.png'
+import personImage from '../../assets/png/person1.jpg'
+import { OutlinedInput } from '@mui/material';
+
 
 export const ContactContainer = styled.div`
 padding: 30px;
 margin: 30px auto;
-background: radial-gradient(58.39% 328.01% at 51.32% 69.21%, #3DA0FC 0%, rgba(2, 227, 214, 0.2) 100%) /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+background-image: radial-gradient(58.39% 328.01% at 51.32% 69.21%, #2257bf 0%, rgba(2, 227, 214, 0.2) 100%);
 border-radius: 10px;
 position: relative;
 `
@@ -24,7 +26,7 @@ box-sizing: border-box;
     margin-top: 50px;
 }
 `
-ContactContainer.Form.Input = styled.input`
+ContactContainer.Form.Input = styled(OutlinedInput)`
 width: 100%;
 height: 40px;
 outline: none;
@@ -39,8 +41,8 @@ margin-top: 15px;
 ContactContainer.Image = styled.img.attrs({
     src:personImage,
 })`
-width:350px;
+width:250px;
 position:absolute;
 bottom:0px;
-right:50px;
+right:200px;
 `

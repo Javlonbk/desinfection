@@ -28,13 +28,13 @@ const FAQ = () => {
   ];
 
   return (
-    <FAQContainer>
+    <FAQContainer id="faq">
       <Container>
         <HeroText>{t('faq.title')}</HeroText>
         <Box sx={{ marginTop: "30px" }}>
           {/* Mapping through FAQ items and rendering accordion */}
           {faqItems.map((item, index) => (
-            <Accordion key={index} sx={{ padding: "15px" }}>
+            <Accordion key={index} sx={{ padding: "15px" }} >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls={`panel${index + 1}-content`}

@@ -30,7 +30,7 @@ const Advantages = () => {
   ];
 
   return (
-    <AdvantagesContainer>
+    <AdvantagesContainer id="about">
       <Container>
         <HeroText>{t('advantages.title')}</HeroText>
         <Box
@@ -45,7 +45,7 @@ const Advantages = () => {
             <div key={index} style={{ width: "28%" }}>
               {advantage.icon}
               <MediumText>{advantage.name}</MediumText>
-              <StandarText>{advantage.text}</StandarText>
+              <StandarText style={{marginTop:'10px'}}>{advantage.text}</StandarText>
             </div>
           ))}
         </Box>
@@ -54,8 +54,8 @@ const Advantages = () => {
         >
           <BgImage />
           <div className="advantage_box_content">
-            <HeroText color="white">{t('advantages.featuredTitle')}</HeroText>
-            <StandarText style={{margin:'20px 0px 50px 0px'}} color="white">{t('advantages.featuredDescription')}</StandarText>
+            <HeroText   dark="white">{t('advantages.featuredTitle')}</HeroText>
+            <StandarText  dark="white" style={{margin:'30px 0px 50px 0px'}} color="white">{t('advantages.featuredDescription')}</StandarText>
             <ButtonPrimary  />
           </div>
         </Box>

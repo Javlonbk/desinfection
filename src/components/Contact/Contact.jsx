@@ -17,9 +17,9 @@ const Contact = () => {
   });
 
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={theme} >
       <Container>
-        <ContactContainer>
+        <ContactContainer id='contact'>
           <ContactContainer.Form>
             <form action="#">
               <MediumText>{t('contact.formTitle')}</MediumText>
