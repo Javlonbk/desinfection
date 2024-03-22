@@ -11,8 +11,8 @@ const Guarante = () => {
   return (
     <Container>
       <GuaranteContainer>
-        <GuaranteContainer.Image />
-        <Box sx={{marginLeft:'100px'}}>
+        <GuaranteContainer.Image data-aos="flip-right" data-aos-duration="300" />
+        <Box sx={{marginLeft:'100px'}} data-aos="flip-left" data-aos-duration="300">
             <GuaranteContainer.Icon/>
             <HeroText style={{color:'#fff', margin:'30px auto'}}>
               {t('guarante.text')}

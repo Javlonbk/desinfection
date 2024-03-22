@@ -59,7 +59,10 @@ const Contact = () => {
     <ThemeProvider theme={theme} >
       <Container>
         <ContactContainer id='contact'>
-          <ContactContainer.Form>
+          <ContactContainer.Form 
+          data-aos="flip-left"
+          data-aos-duration="500"
+          >
             <form onSubmit={handleSubmit}>
               <MediumText>{t('contact.formTitle')}</MediumText>
               <ContactContainer.Form.Input 
@@ -80,7 +83,12 @@ const Contact = () => {
               <FormControl />
             </form>
           </ContactContainer.Form>
-          <ContactContainer.Image/>
+          <ContactContainer.Image
+          data-aos="fade-left"
+          data-aos-anchor="#example-anchor"
+          data-aos-offset="2000"
+          data-aos-duration="3000"
+          />
         </ContactContainer>
       </Container>
     </ThemeProvider>

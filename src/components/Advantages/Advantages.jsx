@@ -42,18 +42,18 @@ const Advantages = () => {
           }}
         >
           {advantages.map((advantage, index) => (
-            <div key={index} style={{ width: "28%" }}>
+            <div  data-aos="flip-left" key={index} style={{ width: "28%" }}>
               {advantage.icon}
               <MediumText>{advantage.name}</MediumText>
               <StandarText style={{marginTop:'10px'}}>{advantage.text}</StandarText>
             </div>
           ))}
         </Box>
-        <Box component={'div'} className="advantage_box"
+        <Box component={'div'}   className="advantage_box"
           sx={{color:'#FAFAFA', position:'relative'}}
         >
           <BgImage />
-          <div className="advantage_box_content">
+          <div className="advantage_box_content" data-aos="flip-down">
             <HeroText   dark="white">{t('advantages.featuredTitle')}</HeroText>
             <StandarText  dark="white" style={{margin:'30px 0px 50px 0px'}} color="white">{t('advantages.featuredDescription')}</StandarText>
             <ButtonPrimary  />

@@ -39,7 +39,7 @@ const Services = () => {
         </Box>
         <Box>
           {data.map((item, index) => (
-            <Card key={index}>
+            <Card key={index} data-aos="zoom-in-right" data-aos-duration="2000">
               <Card.Image src={item.imgSrc} />
               <div>
                 <MediumText>{item.heading}</MediumText>

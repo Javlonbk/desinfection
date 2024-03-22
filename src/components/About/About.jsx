@@ -9,9 +9,9 @@ const About = () => {
   const { t } = useTranslation();
 
   return (
-    <AboutContainer>
+    <AboutContainer >
       <Container sx={{ display: "flex", justifyContent:"space-between"}}>
-        <div className='about-info'>
+        <div className='about-info' data-aos="fade-right">
           <h1>{t('about.title')}</h1>
           <StandarText white>{t('about.description')}</StandarText>
           <ButtonPrimary/>
