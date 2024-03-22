@@ -8,7 +8,7 @@ const ButtonPrimary = () => {
 
   return (
     <Button variant="contained" href="#contact" 
-    sx={{width:'130px', fontWeight:'600', height:'36px', borderRadius:'20px', textTransform:'capitalize'
+    sx={{width:'130px', fontWeight:'600', height:'36px', borderRadius:'20px', textTransform:'capitalize', display:{xs:'none', md:'flex'} 
     }}
     >
            {t('button.btnText')} 

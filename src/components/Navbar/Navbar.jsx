@@ -58,6 +58,7 @@ function Navbar() {
                 letterSpacing: ".1rem",
                 color: "inherit",
                 textDecoration: "none",
+                color:'#2257bf'
               }}
             >
               {t('navbar.appTitle')}
@@ -71,7 +72,7 @@ function Navbar() {
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={handleOpenNavMenu}
-              color="inherit"
+              color='#2257bf'
             >
               <MenuIcon />
             </IconButton>
@@ -132,7 +133,7 @@ function Navbar() {
                 fontFamily: "monospace",
                 fontWeight: 700,
                 letterSpacing: ".3rem",
-                color: "#000",
+                color:'#2257bf',
                 textDecoration: "none",
                 borderBottom: activeItem === 'home' ? '2px solid #2257bf' : 'none', // Apply underline for the active item
                 transition: 'border-color 0.3s ease-out', // Add transition effect
