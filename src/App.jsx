@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar/Navbar'
 import About from './components/About/About'
 import Advantages from './components/Advantages/Advantages'
@@ -17,16 +17,19 @@ function App() {
     AOS.init();
   }, [])  
 
+  const [snack, setSnack] = useState(false);
+
+
   return (
     <>
-    {/* <Navbar/> */}
-    <About/>
+    <Navbar/>
+    <About />
     <Advantages/>
     <Services/>
     <ServiceTypes/>
     <Guarante/>
     <FAQ/>
-    <Contact/>
+    <Contact />
     <Footer/>
     </>
   )

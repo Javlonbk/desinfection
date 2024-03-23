@@ -126,7 +126,9 @@ function Navbar() {
 
               <LanguageControl />
 
+              <Box sx={{display:{xs:'none', md:'flex'}}}>
               <ButtonPrimary />
+              </Box>
               <Box
                 sx={{
                   width: "auto",

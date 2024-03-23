@@ -4,6 +4,7 @@ import { Button, FormControl, ThemeProvider, createTheme } from "@mui/material";
 import { Container } from "@mui/system";
 import { MediumText } from "../Text/Text";
 import { ContactContainer } from "./style";
+import Snack from '../Snacks/Snack'
 
 const Contact = () => {
   const { t } = useTranslation();
@@ -18,8 +19,13 @@ const Contact = () => {
 
   const [form, setForm] = useState({
     name:'',
-    phone:''
+    phone:'+998 ',
   });
+  const [showNameError, setShowNameError] = useState(false);
+  const [showPhoneError, setShowPhoneError] = useState(false);
+  const [snackOpen, setSnackOpen] = useState(false); // State for Snackbar
+
+
 
   const tgToken = "7091081477:AAEgwtR5RXVvLJaxwhT5ogVsmeni0b_Rs1Y";
   const chatId = "5511081391";
@@ -38,27 +44,60 @@ const Contact = () => {
 
       console.log('Message sent successfully to Telegram bot.');
       resetForm();
+      setSnackOpen(true);
     } catch (error) {
       console.error('Error occurred while sending message to Telegram bot:', error);
     }
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission
+    e.preventDefault(); 
+
+    if (form.name.length < 4) {
+      setShowNameError(true);
+      return; 
+    } else {
+      setShowNameError(false);
+    }
+
+    if (form.phone.length < 13) {
+      setShowPhoneError(true);
+      return; 
+    } else {
+      setShowPhoneError(false);
+    }
     sendUserInfo();
+    
   };
 
   const resetForm = () => {
     setForm({
       name: '',
-      phone: ''
+      phone: '+998 ',
     });
+    setShowNameError(false);
+    setShowPhoneError(false);
+  };
+
+  const handlePhoneChange = (e) => {
+    let newValue = e.target.value;
+    
+    if (!newValue.startsWith('+998 ')) {
+      newValue = '+998 ' + newValue;
+    }
+  
+    if (newValue.length > 4) {
+      newValue = newValue.substring(5).replace(/[^\d]+/g, ''); // Keep only numeric characters
+      newValue = '+998 ' + newValue.substring(0, 9); // Limit phone number to 9 digits
+    }
+  
+    setForm({ ...form, phone: newValue });
   };
 
   return (
-    <ThemeProvider theme={theme} >
+    <ThemeProvider theme={theme}>
       <Container>
-        <ContactContainer id='contact'>
+        <ContactContainer id='contact' >
           <ContactContainer.Form 
           data-aos="flip-left"
           data-aos-duration="500"
@@ -69,14 +108,23 @@ const Contact = () => {
                 onChange={(e) => setForm({...form, name:e.target.value})}
                 value={form.name} 
                 placeholder={t('contact.placeholderName')} 
-                required 
+                type="text"
+                style={{ border: showNameError ? '1px solid red' : 'none' }}
               />
+              {showNameError && (
+                <p style={{ color: 'red', fontSize:'12px',marginTop:'5px' }}>Ism 4 harfdan kam bo'lmasligi kerak.</p>
+              )}
               <ContactContainer.Form.Input 
-                onChange={(e) => setForm({...form, phone:e.target.value})}
+                onChange={handlePhoneChange}
                 value={form.phone} 
+                type="tel"
+                pattern="[0-9]{9}" // Use pattern to restrict to 9 numeric characters
                 placeholder={t('contact.placeholderPhone')} 
-                required 
+                style={{ border: showPhoneError ? '1px solid red' : 'none' }}
               />
+              {showPhoneError && (
+                <p style={{ color: 'red', fontSize:'12px',marginTop:'5px' }}>Telefon raqami xato</p>
+              )}
               <Button type="submit" variant="contained" color="primary" className="btn-send">
                 {t('contact.submitButtonText')}
               </Button>
@@ -90,6 +138,8 @@ const Contact = () => {
           data-aos-duration="3000"
           />
         </ContactContainer>
+        {/* // Snack component */}
+        <Snack open={snackOpen} setOpen={setSnackOpen} />
       </Container>
     </ThemeProvider>
   );

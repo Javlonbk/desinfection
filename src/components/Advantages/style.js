@@ -16,7 +16,7 @@ margin-top: 50px;
 
 .advantage_box{
 width: 100%;
-height: 400px;
+height: 450px;
 margin: 50px auto;
 border-radius: 20px;
 display: flex;
