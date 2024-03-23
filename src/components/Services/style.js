@@ -18,10 +18,32 @@ box-sizing: border-box;
 margin-top: 30px;
 div{
     width: 70%;
+    p{
+        margin-top:20px;
+    }
+}
+@media (max-width:992px) {
+    flex-direction:column;
+    div{
+        width:100%;
+        h3{
+            font-size:18px;
+            margin-top:15px;
+        }
+        p{
+            margin-top:10px;
+            font-size:12px;
+            line-height:18px;
+            text-align:justify;
+        }
+    }
 }
 `
 
 Card.Image = styled.img.attrs({
-width: '200px',
-marginRight:'50px'
-})``
+width: '200px'
+})`
+@media (max-width:992px) {
+    width:100px;
+}
+`

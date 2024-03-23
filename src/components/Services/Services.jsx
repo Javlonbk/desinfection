@@ -37,13 +37,13 @@ const Services = () => {
             {t("services.description")}
           </StandarText>
         </Box>
-        <Box>
+        <Box sx={{paddingBottom:'20px'}}>
           {data.map((item, index) => (
             <Card key={index} data-aos="zoom-in-right" data-aos-duration="2000">
               <Card.Image src={item.imgSrc} />
               <div>
                 <MediumText>{item.heading}</MediumText>
-                <StandarText style={{ marginTop: '20px' }}>
+                <StandarText >
                   {item.title}
                 </StandarText>
               </div>

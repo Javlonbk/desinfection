@@ -10,8 +10,20 @@ import Container from "@mui/material/Container";
 import MenuItem from "@mui/material/MenuItem";
 import ButtonPrimary from "../Button/Button";
 import LanguageControl from "../Select/LanguageControl";
-import { useTranslation } from 'react-i18next';
-import logo from '../../assets/svg/logo.svg';
+import { useTranslation } from "react-i18next";
+import logo from "../../assets/svg/logo.svg";
+import styled from "styled-components";
+
+const NavbarContainer = styled.div`
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  top: 0;
+`;
+
+const Placeholder = styled.div`
+  height: 80px; /* Same as the height of the Navbar */
+`;
 
 function Navbar() {
   const { t } = useTranslation();
@@ -31,144 +43,159 @@ function Navbar() {
     handleCloseNavMenu();
   };
 
-  // Define navigation items
   const navItems = [
-    { key: 'home', label: t('navbar.home'), href: '/' },
-    { key: 'services', label: t('navbar.services'), href: '#services' },
-    { key: 'aboutUs', label: t('navbar.aboutUs'), href: '#about' },
-    { key: 'faq', label: t('navbar.faq'), href: '#faq' }
+    { key: "home", label: t("navbar.home"), href: "/" },
+    { key: "services", label: t("navbar.services"), href: "#services" },
+    { key: "aboutUs", label: t("navbar.aboutUs"), href: "#about" },
+    { key: "faq", label: t("navbar.faq"), href: "#faq" },
   ];
 
   return (
-    <AppBar position="static" sx={{ backgroundColor: "transparent", color: "#000", height:'80px', marginTop:'0px'}}>
-      <Container maxWidth="xl">
-        <Toolbar>
-          <Box sx={{ display: { xs: "none", md: "flex" }, alignItems:'center', color:'#2257bf'}}>
-            <img src={logo} style={{width:'60px', marginTop:'10px'}} alt="" />
-            <Typography
-              variant="h6"
-              noWrap
-              component="a"
-              href="/"
+    <>
+      <NavbarContainer>
+        <AppBar
+          sx={{
+            position: "fixed",
+            backgroundColor: "#fff",
+            color: "#000",
+            height: "80px",
+            marginTop: "0px",
+          }}
+        >
+          <Container maxWidth="xl">
+            <Toolbar
               sx={{
-                ms: 2,
-                mr: 3,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".1rem",
-                color: "inherit",
-                textDecoration: "none",
-                color:'#2257bf'
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "center",
               }}
             >
-              {t('navbar.appTitle')}
-            </Typography>
-          </Box>
-          
-          <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color='#2257bf'
-            >
-              <MenuIcon />
-            </IconButton>
-            <Menu
-              id="menu-appbar"
-              anchorEl={anchorElNav}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-              open={Boolean(anchorElNav)}
-              onClose={handleCloseNavMenu}
-              sx={{
-                color: "#000",
-                display: { xs: "block", md: "none" },
-              }}
-            >
-              {navItems.map((item) => (
-                <MenuItem
-                  key={item.key}
-                  onClick={() => handleMenuItemClick(item.key)}
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  color: "#2257bf",
+                }}
+              >
+                <img
+                  src={logo}
+                  style={{ width: "60px", marginTop: "10px" }}
+                  alt=""
+                />
+                <Typography
+                  variant="h6"
+                  noWrap
+                  component="a"
+                  href="/"
+                  sx={{
+                    display: { xs: "none", md: "block" },
+                    ms: 2,
+                    mr: 3,
+                    fontFamily: "monospace",
+                    fontWeight: 700,
+                    letterSpacing: ".1rem",
+                    color: "inherit",
+                    textDecoration: "none",
+                    color: "#2257bf",
+                  }}
                 >
-                   <a
-                key={item.key}
-                href={item.href}
-                onClick={() => handleMenuItemClick(item.key)}
-                style={{
-                  margin: '0 16px',
-                  fontSize:'15px',
-                  color: activeItem === item.key ? '#2257bf' : '#000',
-                  textDecoration: 'none',
-                  borderBottom: activeItem === item.key ? '2px solid #2257bf' : 'none',
-                  transition: 'border-color 0.3s ease-out', 
+                  {t("navbar.appTitle")}
+                </Typography>
+              </Box>
+
+              <Box sx={{ flexGrow: 1, display: { xs: "none", md: "block" } }}>
+                {navItems.map((item) => (
+                  <a
+                    key={item.key}
+                    href={item.href}
+                    onClick={() => handleMenuItemClick(item.key)}
+                    style={{
+                      margin: "0 16px",
+                      fontSize: "15px",
+                      color: activeItem === item.key ? "#2257bf" : "#000",
+                      textDecoration: "none",
+                      borderBottom:
+                        activeItem === item.key ? "2px solid #2257bf" : "none",
+                      transition: "border-color 0.3s ease-out",
+                    }}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </Box>
+
+              <LanguageControl />
+
+              <ButtonPrimary />
+              <Box
+                sx={{
+                  width: "auto",
+                  display: { xs: "flex", md: "none" },
+                  justifyContent: "end",
                 }}
               >
-                {item.label}
-              </a>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-
-          <Box sx={{display:{xs:'flex', md:'none'}, alignItems:'center', color:'#2257bf'}}>
-            <img src={logo} style={{width:'60px', marginTop:'10px'}} alt="" />
-            <Typography
-              variant="h5"
-              noWrap
-              component="a"
-              href="#app-bar-with-responsive-menu"
-              sx={{
-                mr: 2,
-                flexGrow: 1,
-                fontFamily: "monospace",
-                fontWeight: 700,
-                letterSpacing: ".3rem",
-                color:'#2257bf',
-                textDecoration: "none",
-                borderBottom: activeItem === 'home' ? '2px solid #2257bf' : 'none', // Apply underline for the active item
-                transition: 'border-color 0.3s ease-out', // Add transition effect
-              }}
-            >
-              {t('navbar.appTitle')}
-            </Typography>
-          </Box>
-
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {navItems.map((item) => (
-              <a
-                key={item.key}
-                href={item.href}
-                onClick={() => handleMenuItemClick(item.key)}
-                style={{
-                  margin: '0 16px',
-                  fontSize:'15px',
-                  color: activeItem === item.key ? '#2257bf' : '#000',
-                  textDecoration: 'none',
-                  borderBottom: activeItem === item.key ? '2px solid #2257bf' : 'none',
-                  transition: 'border-color 0.3s ease-out', 
-                }}
-              >
-                {item.label}
-              </a>
-            ))}
-          </Box>
-
-          <LanguageControl />
-
-          <ButtonPrimary />
-        </Toolbar>
-      </Container>
-    </AppBar>
+                <IconButton
+                  size="large"
+                  aria-label="account of current user"
+                  aria-controls="menu-appbar"
+                  aria-haspopup="true"
+                  onClick={handleOpenNavMenu}
+                  color="#2257bf"
+                >
+                  <MenuIcon />
+                </IconButton>
+                <Menu
+                  id="menu-appbar"
+                  anchorEl={anchorElNav}
+                  anchorOrigin={{
+                    vertical: "bottom",
+                    horizontal: "left",
+                  }}
+                  keepMounted
+                  transformOrigin={{
+                    vertical: "top",
+                    horizontal: "left",
+                  }}
+                  open={Boolean(anchorElNav)}
+                  onClose={handleCloseNavMenu}
+                  sx={{
+                    color: "#000",
+                    display: { xs: "block", md: "none" },
+                  }}
+                >
+                  {navItems.map((item) => (
+                    <MenuItem
+                      key={item.key}
+                      onClick={() => handleMenuItemClick(item.key)}
+                    >
+                      <a
+                        key={item.key}
+                        href={item.href}
+                        onClick={() => handleMenuItemClick(item.key)}
+                        style={{
+                          margin: "0 16px",
+                          fontSize: "15px",
+                          color: activeItem === item.key ? "#2257bf" : "#000",
+                          textDecoration: "none",
+                          borderBottom:
+                            activeItem === item.key
+                              ? "2px solid #2257bf"
+                              : "none",
+                          transition: "border-color 0.3s ease-out",
+                        }}
+                      >
+                        {item.label}
+                      </a>
+                    </MenuItem>
+                  ))}
+                </Menu>
+              </Box>
+            </Toolbar>
+          </Container>
+        </AppBar>
+      </NavbarContainer>
+      <Placeholder /> {/* Placeholder to prevent content from being hidden */}
+    </>
   );
 }
 

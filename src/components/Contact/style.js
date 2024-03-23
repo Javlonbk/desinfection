@@ -9,6 +9,11 @@ margin: 30px auto;
 background-image: radial-gradient(58.39% 328.01% at 51.32% 69.21%, #2257bf 0%, rgba(2, 227, 214, 0.2) 100%);
 border-radius: 10px;
 position: relative;
+@media (max-width:769px){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 `
 
 ContactContainer.Form = styled.div`
@@ -38,6 +43,7 @@ border-radius: 10px;
 margin-top: 15px;
 `
 
+
 ContactContainer.Image = styled.img.attrs({
     src:personImage,
 })`
@@ -45,4 +51,10 @@ width:250px;
 position:absolute;
 bottom:0px;
 right:200px;
+@media (max-width:992px){
+    right:30px;
+}
+@media (max-width:769px){
+    display:none;
+}
 `

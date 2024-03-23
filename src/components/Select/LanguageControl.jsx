@@ -21,7 +21,7 @@ const LanguageControl = () => {
 
   return (
     <LanguageControlContainer>
-      <Box sx={{ minWidth: 120, height: "100%" }}>
+      <Box sx={{ minWidth: 120, height: "100%", display:'flex', justifyContent:'end' }}>
         <FormControl fullWidth>
           <Select
             labelId="demo-simple-select-label"

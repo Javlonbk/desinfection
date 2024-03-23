@@ -15,9 +15,22 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width:576px) {
+    width: 250px;
+    height: 350px;
+    p{
+      font-size:12px;
+      line-height: 16px;
+    }
+  }
 `;
 
 Card.Image = styled.img`
   width: 100px;
+  height: 100px;
   border-radius: 50%;
+  @media (max-width:576px) {
+    width: 70px;
+    height: 70px;
+  }
 `;

@@ -11,7 +11,7 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <Container sx={{display:'flex'}}>
+      <Container sx={{display:'flex', flexDirection:{xs:'column', sm:"row"}}}>
       <Box sx={{ display: 'flex', alignItems:'center', color:'#2257bf'}}  data-aos="fade-right"
           data-aos-anchor="#example-anchor"
           data-aos-offset="2000"
@@ -35,7 +35,7 @@ const Footer = () => {
               {t('navbar.appTitle')}
             </Typography>
       </Box>
-      <Box m={'30px 0px 0px 100px'}  data-aos="fade-right"
+      <Box sx={{m:{xs:'20px 0px', sm:'30px 0px 0px 100px'}}}  data-aos="fade-right"
           data-aos-anchor="#example-anchor"
           data-aos-offset="2000"
           data-aos-duration="3000"> 

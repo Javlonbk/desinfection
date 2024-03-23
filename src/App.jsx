@@ -19,7 +19,7 @@ function App() {
 
   return (
     <>
-    <Navbar/>
+    {/* <Navbar/> */}
     <About/>
     <Advantages/>
     <Services/>
