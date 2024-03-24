@@ -16,7 +16,7 @@ margin-top: 50px;
 
 .advantage_box{
 width: 100%;
-height: 450px;
+max-height: 450px;
 margin: 50px auto;
 border-radius: 20px;
 display: flex;
@@ -51,9 +51,8 @@ p{
     margin-top: 25px;
     }
 }
-@media (max-width:992px) {
+@media (max-width:1200px) {
     .advantage_box{
-        height: 350px;
         .advantage_box_content{
             width: 100%;
             
@@ -62,7 +61,6 @@ p{
 }
 @media (max-width:576px) {
     .advantage_box{
-        height: 320px;
         .advantage_box_content{
             padding: 25px;
             width: 100%;

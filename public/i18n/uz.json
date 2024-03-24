@@ -28,7 +28,9 @@
     "placeholderName": "Ismingizni kiriting",
     "placeholderPhone": "Telefon raqamingizni kiriting",
     "submitButtonText": "Yuborish",
-    "formTitle": "Malumotingizni qoldiring"
+    "formTitle": "Malumotingizni qoldiring",
+    "errorName":"Ism 4 harfdan kam bo'lmasligi kerak!",
+    "errorPhone":"Telefon raqami xato!"
   },
   "faq": {
     "title": "FAQ",

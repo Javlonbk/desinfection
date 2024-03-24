@@ -26,7 +26,12 @@ const Snack = ({ open, setOpen }) => {
 
   return (
     <div>
-      <Snackbar open={open} autoHideDuration={null} onClose={handleClose}>
+      <Snackbar 
+        open={open} 
+        autoHideDuration={null} 
+        onClose={handleClose} 
+        anchorOrigin={{ vertical: 'top', horizontal: 'right' }} // Positioning to top-right corner
+      >
         <Alert
           onClose={handleClose}
           severity="success"

@@ -17,9 +17,10 @@ export const AboutContainer = styled.div`
   .about-info {
     width: 50%;
     color: #fff;
-    @media (max-width: 576px) {
-      width: 80%;
-  }
+    @media (max-width: 600px) {
+      width: 100%;
+      text-align: center;
+    }
 
     p {
       margin-top: 30px;

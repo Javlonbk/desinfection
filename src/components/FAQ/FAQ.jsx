@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
 import { Container, Box } from "@mui/material";
 import { HeroText, MediumText, StandarText } from "../Text/Text";
@@ -10,6 +10,7 @@ import { FAQContainer } from "./style";
 
 const FAQ = () => {
   const { t } = useTranslation();
+  const [expandedAccordion, setExpandedAccordion] = useState(null);
 
   // Array of FAQ items
   const faqItems = [
@@ -27,6 +28,10 @@ const FAQ = () => {
     }
   ];
 
+  const handleChange = (panel) => (event, isExpanded) => {
+    setExpandedAccordion(isExpanded ? panel : null);
+  };
+
   return (
     <FAQContainer id="faq">
       <Container>
@@ -34,7 +39,12 @@ const FAQ = () => {
         <Box sx={{ marginTop: "30px" }}>
           {/* Mapping through FAQ items and rendering accordion */}
           {faqItems.map((item, index) => (
-            <Accordion key={index} sx={{ padding: "15px" }} >
+            <Accordion
+              key={index}
+              expanded={expandedAccordion === `panel${index + 1}`}
+              onChange={handleChange(`panel${index + 1}`)}
+              sx={{ padding: "15px" }}
+            >
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls={`panel${index + 1}-content`}

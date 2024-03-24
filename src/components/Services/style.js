@@ -1,8 +1,10 @@
-import { Paper } from '@mui/material'
+import {
+    Paper
+} from '@mui/material'
 import styled from 'styled-components'
 
 
-export const ServicesContainer = styled.div`
+export const ServicesContainer = styled.div `
 overflow-y: auto;
 scroll-behavior: smooth;
 `
@@ -41,8 +43,9 @@ div{
 `
 
 Card.Image = styled.img.attrs({
-width: '200px'
-})`
+    width: '200px'
+})
+`
 @media (max-width:992px) {
     width:100px;
 }

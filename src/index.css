@@ -1,3 +1,4 @@
+@import "react-alice-carousel/lib/alice-carousel.css";
 @font-face {
     font-family: 'Roboto-Regular';
     src: url('/fonts/Roboto/Roboto-Regular.ttf');
@@ -13,6 +14,10 @@
 }
 html {
     scroll-behavior: smooth;
+}
+body{
+    overflow-y: scroll;
+    position: relative;
 }
 h1, h2 {
     font-family: 'Roboto-Bold';

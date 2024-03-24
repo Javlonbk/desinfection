@@ -6,21 +6,22 @@ export const ServiceTypesContainer = styled.div`
 
 export const Card = styled.div`
   width: 350px;
-  height: 400px;
-  margin-left:25px;
+  height: 450px;
   background-color: #F3F6F6;
   border-radius: 12px;
+  margin: 0px 5px;
   padding: 20px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   @media (max-width:576px) {
-    width: 250px;
+    width: 300px;
     height: 350px;
     p{
-      font-size:12px;
-      line-height: 16px;
+      font-size:14px;
+      line-height: 18px;
+      text-align: justify;
     }
   }
 `;

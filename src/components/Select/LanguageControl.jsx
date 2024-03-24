@@ -24,6 +24,9 @@ const LanguageControl = () => {
       <Box sx={{ minWidth: 120, height: "100%", display:'flex', justifyContent:'end' }}>
         <FormControl fullWidth>
           <Select
+            MenuProps={{
+              disableScrollLock: true,
+            }}
             labelId="demo-simple-select-label"
             id="demo-simple-select"
             value={lang}

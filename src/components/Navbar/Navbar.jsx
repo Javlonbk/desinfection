@@ -19,6 +19,7 @@ const NavbarContainer = styled.div`
   width: 100%;
   z-index: 1000;
   top: 0;
+  box-sizing: border-box;
 `;
 
 const Placeholder = styled.div`
@@ -94,7 +95,6 @@ function Navbar() {
                     fontFamily: "monospace",
                     fontWeight: 700,
                     letterSpacing: ".1rem",
-                    color: "inherit",
                     textDecoration: "none",
                     color: "#2257bf",
                   }}

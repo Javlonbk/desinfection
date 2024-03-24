@@ -18,7 +18,7 @@ position: relative;
 
 ContactContainer.Form = styled.div`
 width: 350px;
-height: 300px;
+max-height: 350px;
 background-color: #fff;
 border-radius: 10px;
 padding: 25px 15px;

@@ -31,9 +31,9 @@ const Services = () => {
   return (
     <ServicesContainer id="services" style={{ overflowY: 'auto', scrollBehavior: 'smooth' }}>
       <Container>
-        <Box sx={{ width: "300px" }}>
+        <Box sx={{ width: {xs:'100%' ,sm:"300px" }}}>
           <HeroText>{t("services.title")}</HeroText>
-          <StandarText style={{ marginTop: "20px" }}>
+          <StandarText  style={{ marginTop: "20px" }}>
             {t("services.description")}
           </StandarText>
         </Box>

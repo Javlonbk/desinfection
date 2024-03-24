@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from 'react-i18next';
-import { Button, FormControl, ThemeProvider, createTheme } from "@mui/material";
+import { Button, FormControl } from "@mui/material";
 import { Container } from "@mui/system";
 import { MediumText } from "../Text/Text";
 import { ContactContainer } from "./style";
@@ -9,13 +9,7 @@ import Snack from '../Snacks/Snack'
 const Contact = () => {
   const { t } = useTranslation();
 
-  const theme = createTheme({
-    palette: {
-      primary: {
-        main: '#242825', // Set your desired button color here
-      },
-    },
-  });
+
 
   const [form, setForm] = useState({
     name:'',
@@ -95,7 +89,7 @@ const Contact = () => {
   };
 
   return (
-    <ThemeProvider theme={theme}>
+    <>
       <Container>
         <ContactContainer id='contact' >
           <ContactContainer.Form 
@@ -112,7 +106,7 @@ const Contact = () => {
                 style={{ border: showNameError ? '1px solid red' : 'none' }}
               />
               {showNameError && (
-                <p style={{ color: 'red', fontSize:'12px',marginTop:'5px' }}>Ism 4 harfdan kam bo'lmasligi kerak.</p>
+                <p style={{ color: 'red', fontSize:'12px',marginTop:'5px' }}>{t('contact.errorName')}</p>
               )}
               <ContactContainer.Form.Input 
                 onChange={handlePhoneChange}
@@ -123,9 +117,9 @@ const Contact = () => {
                 style={{ border: showPhoneError ? '1px solid red' : 'none' }}
               />
               {showPhoneError && (
-                <p style={{ color: 'red', fontSize:'12px',marginTop:'5px' }}>Telefon raqami xato</p>
+                <p style={{ color: 'red', fontSize:'12px',marginTop:'5px' }}>{t('contact.errorPhone')}</p>
               )}
-              <Button type="submit" variant="contained" color="primary" className="btn-send">
+              <Button type="submit" variant="contained" className="btn-send">
                 {t('contact.submitButtonText')}
               </Button>
               <FormControl />
@@ -141,7 +135,7 @@ const Contact = () => {
         {/* // Snack component */}
         <Snack open={snackOpen} setOpen={setSnackOpen} />
       </Container>
-    </ThemeProvider>
+    </>
   );
 };
 
